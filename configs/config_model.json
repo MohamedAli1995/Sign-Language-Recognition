@@ -1,0 +1,16 @@
+{
+  "num_epochs": 200,
+  "learning_rate": 0.0001,
+  "batch_size": 128,
+  "val_per_epoch": 1,
+  "state_size": [64, 64, 1],
+  "max_to_keep":1,
+  "per_process_gpu_memory_fraction":1,
+  "split_val_test":true,
+  "use_val":true,
+  "train_data_path":"/media/syrix/programms/projects/Sign-Language-Recognition/dataset/Sign-Language-Digits-Dataset-master/",
+  "summary_dir":"/media/syrix/programms/projects/Sign-Language-Recognition/saved_models/summary/",
+  "checkpoint_dir":"/media/syrix/programms/projects/Sign-Language-Recognition/saved_models/checkpoint/"
+
+}
+
