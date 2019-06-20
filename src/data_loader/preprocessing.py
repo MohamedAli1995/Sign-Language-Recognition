@@ -1,14 +1,7 @@
 import numpy as np
 import scipy
-import os
-import cv2
-from sklearn.preprocessing import MinMaxScaler
 
 
-# def read_gray_img(path):
-#     img = scipy.misc.imread(path, mode='L').astype(np.float)
-#     img = img.reshape(img.shape[0], img.shape[1], 1)
-#     return img
 import cv2
 def preprocess_image(path, target_dims):
     img = scipy.misc.imread(path, mode='L').astype(np.float)

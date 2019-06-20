@@ -1,6 +1,4 @@
 import tensorflow as tf
-import numpy as np
-import cv2
 from src.data_loader.data_generator import DataGenerator
 from src.models.gesture_recognition_model import GestureRecognitionModel
 from src.trainers.gesture_recognition_trainer import GestureRecognitionTrainer
@@ -16,10 +14,7 @@ def main():
     config = None
     try:
         args = get_args()
-        print(args.config)
-        # config = processing_config(
-        #     "/media/syrix/programms/projects/Sign-Language-Recognition/configs/config_model.json")
-        # config = processing_config(args.config)
+        config = processing_config(args.config)
     except:
         print("Missing or invalid arguments")
         exit(0)

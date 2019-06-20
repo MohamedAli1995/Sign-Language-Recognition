@@ -41,7 +41,7 @@ class GestureRecognitionTrainer(BaseTrain):
                       feed_dict=feed_dict)
         # Run without dropout
         feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: False,
-                     self.model.hold_prob_conv: 1.0, self.model.hold_prob_fc : 1.0}
+                     self.model.hold_prob_conv: 1.0, self.model.hold_prob_fc: 1.0}
         loss, acc = self.sess.run([self.model.cross_entropy, self.model.accuracy],
                                   feed_dict=feed_dict)
         return loss, acc
