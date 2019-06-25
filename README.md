@@ -134,14 +134,14 @@ python3.6 -m src.mains.main --config path_to_config_file
 Configure the config file to the path of the model checkpoint.<br>
 cd to project folder.<br>
 ```
-python3.6 -m src.mains.main --config path_to_config_file -i "path_to_image"
+python3.6 -m src.mains.main --config "path_to_config_file" -i "path_to_image"
 ```
 
 ### To make predictions using path for test images input:<br>
 Configure the config file to the path of the model checkpoint.<br>
 cd to project folder.<br>
 ```
-python3.6 -m src.mains.main --config path_to_config_file -t "path_to_images_folder"
+python3.6 -m src.mains.main --config "path_to_config_file" -t "path_to_images_folder"
 ```
 
 
