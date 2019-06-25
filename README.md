@@ -112,7 +112,7 @@ In order to train, pretrain or test the model you need first to edit the config 
 ```
 
 # How to Train
-In order to train, pretrain or test the model you need first to edit the config file that is described at(#Config-File).<br>
+In order to train, pretrain or test the model you need first to edit the config file that is described at (#config-file).<br>
 To train a Gesture Recognition model:<br>
 set:<br>
 ```
