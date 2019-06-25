@@ -12,6 +12,12 @@ This project structure follows the **best practice tensorflow folder structure o
 - [How to predict](#Make-predictions-with-pretrained-models)
 - [Implementation details](#Implementation-details)
      - [Preprocessing](#Gesture-recognition-model-preprocessing)
+          - [Dataset Shuffling][#Shuffling-dataset]
+          - [Splitting train, val and test][#Splitting-dataset]
+          - [Change input dimensions][#Changing-input-dimensions]
+          - [Normalizing batches to zero mean][#Normalizing-batches]
+          - [Data Augmentation][#Data-augmentation]
+          
      - [Sign Recognition model architecture](#Gesture-recognition-model-arch)
      - [Model training](#Model-training)
 
@@ -148,6 +154,32 @@ python3.6 -m src.mains.main --config "path_to_config_file" -t "path_to_images_fo
 # Implementation details
 ## Gesture recognition model preprocessing
 talk about preprocessing
+### Shuffling dataset
+In order to decrease the probability of overfitting, training set is shuffled every new epoch<br>
+```
+indices_list = [i for i in range(self.x_train.shape[0])]  # Training examples.
+shuffle(indices_list)
+```
+
+### Splitting dataset
+Dataset is splitted into 3 segments, training set(80%), validation set(10%) and testing set (10%)<br>
+
+### Changing input dimensions
+Input image is a 100x100x3 images, they are downsampled to a 64x64x1 gray-scale image, as color information are redundant and meaningless in this task (we don't want to differentiate between white and dark hands..) <br>
+```
+img = scipy.misc.imresize(img, (64, 64))
+```
+
+### Normalizing batches
+In order to change the input images values to a common scale, data is normalized to be a zero-mean <br>
+'''
+img = (img - img.min()) / (img_range + 1e-5)  #1e-5 is to prevent division by zero
+'''
+
+### Data augmentation
+TODO: Augment training set.
+Data augmentation will help in increasing the model performance <br>
+
 ## Gesture recognition model arch
 <img src="https://github.com/MohamedAli1995/Sign-Language-Recognition/blob/master/diagrams/model_diagram.png"
      alt="Image not loaded" style="float: left; margin-right: 10px;" />
