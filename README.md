@@ -9,7 +9,7 @@ This project structure follows the **best practice tensorflow folder structure o
 - [Dependencies](#install-dependencies)
 - [Config file](#config-file)
 - [How to train](#How-to-Train)
-- [How to predict](#Make predictions-with-pretrained-models)
+- [How to predict](#Make-predictions-with-pretrained-models)
 - [Implementation details](#Implementation-details)
      - [Preprocessing](#Gesture-recognition-model-preprocessing)
      - [Sign Recognition model architecture](#Gesture-recognition-model-arch)
@@ -113,7 +113,7 @@ In order to train, pretrain or test the model you need first to edit the config 
 
 # How to Train
 In order to train, pretrain or test the model you need first to edit the config file that is described at(#Config-File).<br>
-To train a Sentiment LSTM model:<br>
+To train a Gesture Recognition model:<br>
 set:<br>
 ```
 "num_epochs":200,
