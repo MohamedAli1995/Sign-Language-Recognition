@@ -86,7 +86,7 @@ class GestureRecognitionModel(BaseModel):
 
 
         flattened = tf.reshape(dropout_conv_3,
-                               [-1, 8 * 8 * 128])
+                               [-1, 8 * 8 * 256])
 
         full_layer_1 = self.__normal_full_layer(flattened, 128)
         fully_bn_1 = self.__batch_norm(full_layer_1)
