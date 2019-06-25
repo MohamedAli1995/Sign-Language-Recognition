@@ -1,12 +1,9 @@
 # Sign-Language-Recognition
 Sign recognition network that predicts a digit giving an image of the sign.<br>
 
-```
 This project structure follows the **best practice tensorflow folder structure of** [Tensorflow Best Practice](https://github.com/MrGemy95/Tensorflow-Project-Template) 
-```
 
 # Table of contents
-
 - [Project structure](#project-structure)
 - [Download pretrained models](#Download-pretrained-models)
 - [Dependencies](#install-dependencies)
