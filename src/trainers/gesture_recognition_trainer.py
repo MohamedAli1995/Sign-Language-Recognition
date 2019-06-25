@@ -34,7 +34,7 @@ class GestureRecognitionTrainer(BaseTrain):
     def train_step(self):
         batch_x, batch_y = self.data.next_batch(batch_type="train")
         feed_dict = {self.model.x: batch_x, self.model.y: batch_y, self.model.is_training: True,
-                     self.model.hold_prob_conv: 0.25, self.model.hold_prob_fc: 0.5}
+                     self.model.hold_prob_conv: 0.5, self.model.hold_prob_fc: 0.5}
 
         # Run training for step first with dropout then calculate loss and acc without dropout.
         self.sess.run([self.model.train_step, self.model.cross_entropy, self.model.accuracy],
