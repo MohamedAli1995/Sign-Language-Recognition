@@ -84,10 +84,14 @@ class GestureRecognitionModel(BaseModel):
                                [-1, 8 * 8 * 128])
 
         full_layer_1 = self.__normal_full_layer(flattened, 128)
-        full_dropout_1 = tf.nn.dropout(full_layer_1, self.hold_prob_fc)
+        fully_bn_1 = self.__batch_norm(full_layer_1)
+
+        full_dropout_1 = tf.nn.dropout(fully_bn_1, self.hold_prob_fc)
 
         full_layer_2 = self.__normal_full_layer(full_dropout_1, 128)
-        full_dropout_2 = tf.nn.dropout(full_layer_2, self.hold_prob_fc)
+        fully_bn_1 = self.__batch_norm(full_layer_2)
+
+        full_dropout_2 = tf.nn.dropout(fully_bn_1, self.hold_prob_fc)
 
         self.y_pred = self.__normal_full_layer(full_dropout_2, 10)
 
