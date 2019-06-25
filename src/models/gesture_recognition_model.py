@@ -71,16 +71,21 @@ class GestureRecognitionModel(BaseModel):
         convo_1 = self.__conv_bn_layer(self.x, shape=[3, 3, 1, 32])
         convo_2 = self.__conv_bn_layer(convo_1, shape=[3, 3, 32, 32])
         convo_1_pooling = self.__max_pool_2d(convo_2)
+        dropout_conv_1 = tf.nn.dropout(convo_1_pooling, self.hold_prob_conv)
 
-        convo_3 = self.__conv_bn_layer(convo_1_pooling, shape=[3, 3, 32, 64])
+        convo_3 = self.__conv_bn_layer(dropout_conv_1, shape=[3, 3, 32, 64])
         convo_4 = self.__conv_bn_layer(convo_3, shape=[3, 3, 64, 64])
         convo_2_pooling = self.__max_pool_2d(convo_4)
+        dropout_conv_2 = tf.nn.dropout(convo_2_pooling, self.hold_prob_conv)
 
-        convo_5 = self.__conv_bn_layer(convo_2_pooling, shape=[3, 3, 64, 128])
+
+        convo_5 = self.__conv_bn_layer(dropout_conv_2, shape=[3, 3, 64, 128])
         convo_6 = self.__conv_bn_layer(convo_5, shape=[3, 3, 128, 128])
         convo_3_pooling = self.__max_pool_2d(convo_6)
+        dropout_conv_3 = tf.nn.dropout(convo_3_pooling, self.hold_prob_conv)
 
-        flattened = tf.reshape(convo_3_pooling,
+
+        flattened = tf.reshape(dropout_conv_3,
                                [-1, 8 * 8 * 128])
 
         full_layer_1 = self.__normal_full_layer(flattened, 128)
