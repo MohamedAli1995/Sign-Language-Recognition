@@ -181,7 +181,7 @@ TODO: Augment training set.
 Data augmentation will help in increasing the model performance <br>
 
 ## Gesture recognition model arch
-<img src="https://github.com/MohamedAli1995/Sign-Language-Recognition/blob/master/saved_models/diagrams/gesture_recognition_model_arch.png"  height="55%" width=100%
+<img src="https://github.com/MohamedAli1995/Sign-Language-Recognition/blob/master/saved_models/diagrams/gesture_recognition_model_arch.png"  height="50%"
      alt="Image not loaded" style="float: left; margin-right: 10px;" />
 
 ## Model Training
