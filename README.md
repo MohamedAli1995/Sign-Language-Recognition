@@ -12,11 +12,11 @@ This project structure follows the **best practice tensorflow folder structure o
 - [How to predict](#Make-predictions-with-pretrained-models)
 - [Implementation details](#Implementation-details)
      - [Preprocessing](#Gesture-recognition-model-preprocessing)
-          - [Dataset Shuffling][#Shuffling-dataset]
-          - [Splitting train, val and test][#Splitting-dataset]
-          - [Change input dimensions][#Changing-input-dimensions]
-          - [Normalizing batches to zero mean][#Normalizing-batches]
-          - [Data Augmentation][#Data-augmentation]
+          - [Dataset Shuffling](#Shuffling-dataset]
+          - [Splitting train, val and test](#Splitting-dataset)
+          - [Change input dimensions](#Changing-input-dimensions)
+          - [Normalizing batches to zero mean](#Normalizing-batches)
+          - [Data Augmentation](#Data-augmentation)
           
      - [Sign Recognition model architecture](#Gesture-recognition-model-arch)
      - [Model training](#Model-training)
