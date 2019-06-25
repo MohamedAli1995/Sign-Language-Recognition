@@ -68,19 +68,19 @@ class GestureRecognitionModel(BaseModel):
         self.hold_prob_conv = tf.placeholder(tf.float32)
         self.hold_prob_fc = tf.placeholder(tf.float32)
 
-        convo_1 = self.__conv_bn_layer(self.x, shape=[3, 3, 1, 32])
-        convo_2 = self.__conv_bn_layer(convo_1, shape=[3, 3, 32, 32])
+        convo_1 = self.__conv_bn_layer(self.x, shape=[3, 3, 1, 8])
+        convo_2 = self.__conv_bn_layer(convo_1, shape=[3, 3, 8, 16])
         convo_1_pooling = self.__max_pool_2d(convo_2)
         dropout_conv_1 = tf.nn.dropout(convo_1_pooling, self.hold_prob_conv)
 
-        convo_3 = self.__conv_bn_layer(dropout_conv_1, shape=[3, 3, 32, 64])
-        convo_4 = self.__conv_bn_layer(convo_3, shape=[3, 3, 64, 64])
+        convo_3 = self.__conv_bn_layer(dropout_conv_1, shape=[3, 3, 16, 32])
+        convo_4 = self.__conv_bn_layer(convo_3, shape=[3, 3, 32, 64])
         convo_2_pooling = self.__max_pool_2d(convo_4)
         dropout_conv_2 = tf.nn.dropout(convo_2_pooling, self.hold_prob_conv)
 
 
         convo_5 = self.__conv_bn_layer(dropout_conv_2, shape=[3, 3, 64, 128])
-        convo_6 = self.__conv_bn_layer(convo_5, shape=[3, 3, 128, 128])
+        convo_6 = self.__conv_bn_layer(convo_5, shape=[3, 3, 128, 256])
         convo_3_pooling = self.__max_pool_2d(convo_6)
         dropout_conv_3 = tf.nn.dropout(convo_3_pooling, self.hold_prob_conv)
 
@@ -92,7 +92,7 @@ class GestureRecognitionModel(BaseModel):
         fully_bn_1 = self.__batch_norm(full_layer_1)
         full_dropout_1 = tf.nn.dropout(fully_bn_1, self.hold_prob_fc)
 
-        full_layer_2 = self.__normal_full_layer(full_dropout_1, 64)
+        full_layer_2 = self.__normal_full_layer(full_dropout_1, 128)
         fully_bn_1 = self.__batch_norm(full_layer_2)
 
         full_dropout_2 = tf.nn.dropout(fully_bn_1, self.hold_prob_fc)
