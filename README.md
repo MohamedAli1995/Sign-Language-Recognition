@@ -182,7 +182,7 @@ Data augmentation will help in increasing the model performance <br>
 
 ## Gesture recognition model arch
 <img src="https://github.com/MohamedAli1995/Sign-Language-Recognition/blob/master/saved_models/diagrams/gesture_recognition_model_arch.png"
-     alt="Image not loaded" style="float: left; margin-right: 10px;width:100; height:200" />
+     alt="Image not loaded" style="float: left; margin-right: 10px;width:100px; height:200px" />
 
 ## Model Training
  I trained the Sign Language model by splitting training_data into train/val/test with ratios 8:1:1 for 300 epochs<br>
