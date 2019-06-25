@@ -8,9 +8,9 @@
   "per_process_gpu_memory_fraction":1,
   "split_val_test":true,
   "use_val":true,
-  "train_data_path":"/content/projects/Sign-Language-Recognition/data/Sign-Language-Digits-Dataset-master/",
-  "summary_dir":"/content/projects/Sign-Language-Recognition/saved_models/summary/",
-  "checkpoint_dir":"/content/projects/Sign-Language-Recognition/saved_models/checkpoint/"
+  "train_data_path":"/content/Sign-Language-Recognition/data/Sign-Language-Digits-Dataset-master/",
+  "summary_dir":"/content/Sign-Language-Recognition/saved_models/summary/",
+  "checkpoint_dir":"/content/Sign-Language-Recognition/saved_models/checkpoint/"
 
 }
 
