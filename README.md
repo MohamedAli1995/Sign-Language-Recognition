@@ -172,9 +172,9 @@ img = scipy.misc.imresize(img, (64, 64))
 
 ### Normalizing batches
 In order to change the input images values to a common scale, data is normalized to be a zero-mean <br>
-'''
+```
 img = (img - img.min()) / (img_range + 1e-5)  #1e-5 is to prevent division by zero
-'''
+```
 
 ### Data augmentation
 TODO: Augment training set.
