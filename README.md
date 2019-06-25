@@ -112,7 +112,7 @@ In order to train, pretrain or test the model you need first to edit the config 
 ```
 
 # How to Train
-In order to train, pretrain or test the model you need first to edit the config file that is described at (#config-file).<br>
+In order to train, pretrain or test the model you need first to edit the config file that is described at [config file](#config-file).<br>
 To train a Gesture Recognition model:<br>
 set:<br>
 ```
@@ -130,14 +130,25 @@ Then change directory to the project's folder and run:
 python3.6 -m src.mains.main --config path_to_config_file
 ```
 # Make predictions with pretrained models
-To make predictions using text input:<br>
+### To make predictions using single image as input input:<br>
+Configure the config file to the path of the model checkpoint.<br>
+cd to project folder.<br>
 ```
-python3.6 -m src.mains.main --config path_to_config_file -i "text to analyze"
+python3.6 -m src.mains.main --config path_to_config_file -i "path_to_image"
 ```
+
+### To make predictions using path for test images input:<br>
+Configure the config file to the path of the model checkpoint.<br>
+cd to project folder.<br>
+```
+python3.6 -m src.mains.main --config path_to_config_file -t "path_to_images_folder"
+```
+
+
 # Implementation details
-## Sentiment model preprocessing
+## Gesture recognition model preprocessing
 talk about preprocessing
-## Sentiment model arch
+## Gesture recognition model arch
 <img src="https://github.com/MohamedAli1995/Sign-Language-Recognition/blob/master/diagrams/model_diagram.png"
      alt="Image not loaded" style="float: left; margin-right: 10px;" />
 
